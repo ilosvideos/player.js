@@ -83,7 +83,7 @@ playerjs.assert = function(test, msg) {
   }
 };
 
-//Based on: https://gist.github.com/mwleinad/be055a595c370c152aec1f32f90130ac GNU GENERAL PUBLIC LICENSE
+//Based on: https://gist.github.com/LeverOne/1308368
 playerjs.generateNewUUid = function(withDashes, stringIndex, result) {
   //stringIndex is not 9, 14, 19 or 24
   function generateRandomNumber(stringIndex) {
@@ -106,6 +106,7 @@ playerjs.generateNewUUid = function(withDashes, stringIndex, result) {
 /*
 * Keeper is just a method for keeping track of all the callbacks.
 */
+
 playerjs.Keeper = function(){
   this.init();
 };
@@ -300,7 +301,6 @@ playerjs.METHODS.all = function(){
 playerjs.READIED = [];
 
 playerjs.Player.prototype.init = function(elem, options){
-  playerjs.log('bbb');
 
   var self = this;
 
