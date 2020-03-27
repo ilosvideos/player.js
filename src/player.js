@@ -4,7 +4,6 @@
 * postMessage that use an Open Player Spec
 *
 */
-
 playerjs.Player = function(elem, options){
   if (!(this instanceof playerjs.Player)) {
     return new playerjs.Player(elem, options);

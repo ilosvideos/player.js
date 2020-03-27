@@ -78,3 +78,23 @@ playerjs.assert = function(test, msg) {
     throw msg || "Player.js Assert Failed";
   }
 };
+
+//Based on: https://gist.github.com/LeverOne/1308368
+playerjs.generateNewUUid = function(withDashes, stringIndex, result) {
+  //stringIndex is not 9, 14, 19 or 24
+  function generateRandomNumber(stringIndex) {
+    var randomNumber = (stringIndex ^ 15 ? 8 ^ Math.random() * (stringIndex ^ 20 ? 16 : 4) : 4);
+    return randomNumber.toString(16);
+  }
+
+  //Placeholder is 9, 14, 19 or 24
+  function addDash(withDashes) {
+    return withDashes ? '-' : '';
+  }
+
+  for(result = stringIndex=''; stringIndex++ < 36; result += stringIndex * 51 & 52 ?
+    generateRandomNumber(stringIndex) :
+    addDash(withDashes)
+  ) { }
+  return result;
+};
